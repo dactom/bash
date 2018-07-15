@@ -1,0 +1,8 @@
+#!/bin/bash
+for i in {1..100}
+    do
+        rnd=$(( (($RANDOM % 479828) + 1) * (($RANDOM % 14) + 1) ))
+        user=$(cat /usr/share/dict/words | head -n $rnd | tail -n 1) 
+        useradd $user
+    done
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+get_date=$( date +%F )
+file_name="$get_date"_$1""
+echo "The file become: $file_name"
+cp $1 $file_name
