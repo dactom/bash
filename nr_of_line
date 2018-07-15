@@ -1,0 +1,4 @@
+#!/bin/bash
+sampledir=$(ls /usr/share/doc | wc -l)
+echo "This is the nr of lines of /usr/share/doc $sampledir"
+

@@ -1,0 +1,3 @@
+#!/bin/bash
+rnd=$(( ($RANDOM % 479828) + 1  ))
+echo $rnd;  cat /usr/share/dict/words | head -n $rnd | tail -n 1 

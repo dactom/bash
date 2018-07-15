@@ -1,0 +1,6 @@
+#!/bin/bash
+for i in {a..z}
+    do
+        count=$(grep -i -e ^$i /usr/share/dict/words | wc -l)
+        echo "Number of word starting with letter $i is $count"
+    done

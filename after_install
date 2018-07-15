@@ -1,0 +1,13 @@
+#!/bin/bash
+# -z switch will test if the expression of "$1" is a null string or not
+# [ $# -eq 0 ] $# variable will tell you if the input number was supplied
+ 
+if [ -z $1 ] || [ -z $2 ] || [ -z $3 ] 
+then 
+	echo "Insert last two IP numbers and hostname in the format \"after_install xxx xxx server.example.com\""
+else
+	nmcli connection modify eth0 ipv4.addresses 192.168.$1.$2/24 ipv4.gateway 192.168.$1.1 ipv4.dns 192.168.$1.1 ipv4.method manual
+	ifdown eth0
+	ifup eth0
+	hostnamectl set-hostname $3
+fi

@@ -1,0 +1,15 @@
+#!/bin/bash
+for i in {a..z} 
+do
+    file_name="/bin/$i?"
+    name=$(ls $file_name 2>/dev/null)
+    if [ $? == 0 ] 
+    then
+        echo -n "$i - "
+        echo "$name" | wc -l
+        echo "$name"
+    else
+        echo "No file with $i"
+    fi
+done
+
