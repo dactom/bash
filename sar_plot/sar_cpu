@@ -1,0 +1,21 @@
+#!/bin/bash
+rm -rf ./sa*.dat
+rm -rf ./sar*.pdf
+for i in 0{1..9} {10..30}
+do
+file_dat="sa$i.dat"
+sadf -T -d /var/log/sa/sa$i -- -u | awk -F\; 'FNR>3 {print $3 " " $5 " " $7 " " $10}' | cut -d" " -f2-5 > $file_dat
+
+gnuplot << EOF
+set terminal pdfcairo
+set output "sar_cpu$i.pdf"
+set grid xtics lt 0 lw 1 lc rgb "#bbbbbb"
+set xrange [0:24]
+set yrange [0:100]
+set xlabel "Time"
+set ylabel "%CPU"
+plot "$file_dat" using 1:2 with lines title "User" lt 1 lw 2,\
+     "$file_dat" using 1:3 with lines title "System" lt 2 lw 2,\
+     "$file_dat" using 1:4 with lines title "Idle" lt 3 lw 2
+EOF
+done
