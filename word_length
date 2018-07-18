@@ -1,9 +1,20 @@
 #!/bin/bash
+#
+# Script        :
+# Author        :Dacian Tomus
+# Website       :https://github.com/dactom
+# Email         : 
+# Description   :Determine the length of the words in /usr/share/dict/words
+# Dependencies  :
+# Usage         :
+# License       :GPLv3
+#
 sum=0
 for i in {1..31}
-do
-	myvar=$( grep -x ".\{$i\}" /usr/share/dict/words | wc -l)
-	echo "Number of words with $i characters is $myvar"
-	sum=$(( $myvar + $sum )) 
-done
+    do
+	    myvar=$( grep -x ".\{$i\}" /usr/share/dict/words | wc -l)
+	    echo "Number of words with $i characters is $myvar"
+	    sum=$(( $myvar + $sum )) 
+    done
+
 echo "Sum of words is : $sum"

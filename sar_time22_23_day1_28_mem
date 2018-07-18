@@ -1,9 +1,18 @@
 #!/bin/bash
+#
+# Script        :
+# Author        :Dacian Tomus
+# Website       :https://github.com/dactom
+# Email         : 
+# Description   :
+# Dependencies  :
+# Usage         :
+# License       :GPLv3
+#
 for i in 0{1..9} {10..30}
-#for i in $(seq -f %02g 1 17)
-do
-echo "Day $i"
-sar -r -s 22:00:00 -e 23:00:00 -f /var/log/sa/sa$i
-echo
-done
+    do
+        echo "Day $i"
+        sar -r -s 22:00:00 -e 23:00:00 -f /var/log/sa/sa$i
+        echo
+    done
 

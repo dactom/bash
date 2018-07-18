@@ -1,8 +1,18 @@
 #!/bin/bash
+#
+# Script        :delete_users
+# Author        :Dacian Tomus
+# Website       :https://github.com/dactom
+# Email         : 
+# Description   :Delete the users created with add_users
+# Dependencies  :
+# Usage         :
+# License       :GPLv3
+#
+
 max_users=$(cat /etc/passwd | wc -l)
 user_id=$(awk -F: '{print $3}' /etc/passwd)
-#user_name=$(awk -F: '{print $1}' /etc/passwd)
-#echo $max_users $user_id $user_name
+
 for i in $user_id
 do
 	if [ $i -gt 1000 ]

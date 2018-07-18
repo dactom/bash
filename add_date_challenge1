@@ -1,4 +1,14 @@
 #!/bin/bash
+#
+# Script        :
+# Author        :Dacian Tomus
+# Website       :https://github.com/dactom
+# Email         : 
+# Description   :
+# Dependencies  :
+# Usage         :
+# License       :GPLv3
+#
 get_date=$( date +%F )
 file=$1
 file_name=${file%%.*}

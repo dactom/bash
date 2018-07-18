@@ -1,3 +1,13 @@
 #!/bin/bash
+#
+# Script        :
+# Author        :Dacian Tomus
+# Website       :https://github.com/dactom
+# Email         : 
+# Description   :
+# Dependencies  :
+# Usage         :
+# License       :GPLv3
+#
 rnd=$(( ($RANDOM % 479828) + 1  ))
 echo $rnd;  cat /usr/share/dict/words | head -n $rnd | tail -n 1 

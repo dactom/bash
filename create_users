@@ -1,4 +1,14 @@
 #!/bin/bash
+#
+# Script        :create_users
+# Author        :Dacian Tomus
+# Website       :https://github.com/dactom
+# Email         : 
+# Description   :Add 100 users randomly selected from /usr/share/dict/words
+# Dependencies  :
+# Usage         :
+# License       :GPLv3
+#
 for i in {1..100}
     do
         rnd=$(( (($RANDOM % 479828) + 1) * (($RANDOM % 14) + 1) ))

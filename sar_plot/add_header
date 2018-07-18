@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Script        :
+# Script        :Add this header to the existing files
 # Author        :Dacian Tomus
 # Website       :https://github.com/dactom
 # Email         : 
@@ -9,6 +9,7 @@
 # Usage         :
 # License       :GPLv3
 #
-sampledir=$(ls /usr/share/doc | wc -l)
-echo "This is the nr of lines of /usr/share/doc $sampledir"
-
+sed -i '/\#\!\/bin\/bash/d' $1
+cat header $1 > new_$1
+mv new_$1 $1
+chmod u+x $1

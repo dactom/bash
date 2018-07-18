@@ -1,4 +1,14 @@
 #!/bin/bash
+#
+# Script        :after_install
+# Author        :Dacian Tomus
+# Website       :https://github.com/dactom
+# Email         : 
+# Description   :Change the IP and hostname after fresh vm install
+# Dependencies  :
+# Usage         :
+# License       :GPLv3
+#
 # -z switch will test if the expression of "$1" is a null string or not
 # [ $# -eq 0 ] $# variable will tell you if the input number was supplied
  
